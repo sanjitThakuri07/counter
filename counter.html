@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c|Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <script src="./assets/js/jquery.js" defer></script>
+    <script src="./assets/js/counter.js" defer></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.2/lottie.min.js"
+      integrity="sha512-R47oG09eydaf225nXyDdSWJ8frKwxkC7QIHXdPpbUx9KaAiC6akjpWxTBw1hb7whk7P2sJNuRhS2ljSBegnIPA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body class="">
+    <div id="modal-container" class="">
+      <div class="modal-background">
+        <div class="player-1">
+          <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+          <lottie-player
+            src="https://assets10.lottiefiles.com/private_files/lf30_unzliotz.json"
+            mode="bounce"
+            background="transparent"
+            speed="1"
+            style="width: 300px; height: 300px"
+            loop
+            autoplay
+          ></lottie-player>
+        </div>
+        <div class="player-2">
+          <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+          <lottie-player
+            src="https://assets10.lottiefiles.com/packages/lf20_8t4s48vl.json"
+            mode="bounce"
+            background="transparent"
+            speed="1"
+            style="width: 300px; height: 300px"
+            loop
+            autoplay
+          ></lottie-player>
+        </div>
+        <div class="modal">
+          <div class="svg" id="svg"></div>
+          <h2>Winner</h2>
+          <p>Congratulations! you have won a lottery of Rs 1coree</p>
+          <svg
+            class="modal-svg"
+            xmlns="http://www.w3.org/2000/svg"
+            width="100%"
+            height="100%"
+            preserveAspectRatio="none"
+          >
+            <rect
+              x="0"
+              y="0"
+              fill="none"
+              width="226"
+              height="162"
+              rx="3"
+              ry="3"
+            ></rect>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="counter">
+        <span class="number" data-number="0">
+          <span class="primary"> </span>
+          <span class="secondary"> </span>
+        </span>
+        <span class="number" data-number="0">
+          <span class="primary"> </span>
+          <span class="secondary"> </span>
+        </span>
+        <span class="number" data-number="0">
+          <span class="primary"> </span>
+          <span class="secondary"> </span>
+        </span>
+        <span class="number" data-number="0">
+          <span class="primary"> </span>
+          <span class="secondary"> </span>
+        </span>
+      </div>
+    </div>
+    <div class="one__group">
+      <div class="control-group">
+        <input
+          id="guess_number"
+          type="number"
+          name="guess_number"
+          placeholder="Enter any Number"
+        />
+        <label for="firstname">Guess Any Number</label>
+      </div>
+      <div class="actions">
+        <button class="restart btn">Restart</button>
+        <button class="set-btn btn first">Set</button>
+      </div>
+    </div>
+  </body>
+  <script>
+    const play = document.querySelector("#button");
+
+    const svgContainer = document.getElementById("svg");
+    const animItem = bodymovin.loadAnimation({
+      wrapper: svgContainer,
+      animType: "svg",
+      loop: true,
+      autoplay: false,
+      path: "https://assets2.lottiefiles.com/packages/lf20_u4yrau.json",
+    });
+
+    animItem.goToAndPlay(0, true);
+    // play.addEventListener("click", () => {
+    //   console.log("hshs");
+    //   svgContainer.classList.remove("hide");
+    // });
+
+    // animItem.addEventListener("complete", () => {
+    //   svgContainer.classList.add("hide");
+    // });
+  </script>
+</html>
