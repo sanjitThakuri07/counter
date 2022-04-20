@@ -18,6 +18,7 @@ body {
   background-position: top center;
   font-family: helvetica neue, helvetica, arial, sans-serif;
   font-weight: 200;
+  overflow: hidden;
 }
 
 .content {
@@ -36,6 +37,40 @@ body {
   height: 100%;
   justify-content: center;
   align-items: center;
+  transform: scale(2.5);
+}
+
+.counter.modal-show {
+  animation: moveTobottom 1.5s forwards ease-in-out;
+  animation-delay: 0.2s;
+}
+
+.counter.modal-hide {
+  animation: moveToDefault 1.5s forwards ease-in-out;
+}
+
+@keyframes moveTobottom {
+  0% {
+    bottom: 0%;
+    left: -5%;
+  }
+  100% {
+    transform: scale(1.5);
+    bottom: -31%;
+    left: 28%;
+  }
+}
+@keyframes moveToDefault {
+  0% {
+    bottom: -31%;
+    left: 28%;
+    transform: scale(1.5);
+  }
+  100% {
+    bottom: 0%;
+    left: 0%;
+    transform: scale(2.5);
+  }
 }
 
 @keyframes animate-top {
@@ -576,7 +611,16 @@ input::-webkit-inner-spin-button {
   border-radius: 3px;
   font-weight: 300;
   position: relative;
-  max-width: 250px;
+  max-width: 350px;
+}
+
+.modal h2 {
+  font-size: 3.2rem;
+  margin-bottom: 1.6rem;
+}
+
+.modal p {
+  font-size: 1.6rem;
 }
 
 #modal-container.one {
