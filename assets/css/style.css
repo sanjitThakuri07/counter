@@ -522,8 +522,9 @@ body {
 .one__group {
   position: absolute;
   max-width: 800px;
-  top: 61%;
+  /* top: 61%; */
   left: 50%;
+  bottom: 0;
   transform: translateX(-55%);
 }
 
